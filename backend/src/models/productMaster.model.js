@@ -2,28 +2,29 @@ import mongoose from "mongoose"
 
 const productMasterSchema = new mongoose.Schema({
     "productId": {
-        type: String,
+        type: Number,
         unique: true,
-        required: [true, "Product id must be required"],
-        trim: true
+        required: [true, "Product id is required"],
+        trim: true,
+        immutable: true
     },
 
     "productName": {
         type: String,
         unique:true,
-        required: [true, "Product name is required"],
+        required: [true, "Product name is  required"],
         trim: true
     },
 
     "displayName":{
         type:String,
-        required:[true,"Display Name is must be required"],
+        required:[true,"Display Name is required"],
         trim:true
     },
 
     "description": {
         type: String,
-        required: [true, "Description is must be required"],
+        required: [true, "Description is required"],
         trim: true
     },
 
@@ -31,7 +32,7 @@ const productMasterSchema = new mongoose.Schema({
         "foodType": {
             type: String,
             enum: ["veg", "non-veg"],
-            required: [true, "Food type is must be required"],
+            required: [true, "Food type is required"],
             trim: true
         },
 
@@ -117,7 +118,7 @@ const productMasterSchema = new mongoose.Schema({
     "compliance": {
         "shelfLifeDays": {
             type: Number,
-            required: [true, "Shelf life day is must be required"],
+            required: [true, "Shelf life day is required"],
         },
         "perishable": {
             type: Boolean,
@@ -144,6 +145,7 @@ const productMasterSchema = new mongoose.Schema({
 
     "highlights": [
         {
+            _id:false,
             "label": {
                 type: String
             },
@@ -162,6 +164,21 @@ const productMasterSchema = new mongoose.Schema({
         "isDeleted": {
             type: Boolean,
             default: false
+        }
+    },
+
+    "rating":{
+        "ratingValue":{
+            type:Number,
+            min:0,
+            max:5,
+            default:0
+        },
+
+        "ratingCount":{
+            type:Number,
+            min:0,
+            default:0
         }
     }
 
