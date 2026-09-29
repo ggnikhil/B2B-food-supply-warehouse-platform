@@ -1,132 +1,172 @@
 import mongoose from "mongoose"
 
 const productMasterSchema = new mongoose.Schema({
-    "productId":{
-        type:String,
+    "productId": {
+        type: String,
         unique: true,
-        required:[true,"Product id must be required"],
+        required: [true, "Product id must be required"],
         trim: true
     },
 
-    "productName":{
+    "productName": {
+        type: String,
+        required: [true, "Product name is must be required"],
+        trim: true
+    },
+
+    "displayName":{
         type:String,
-        required:[true,"Product name is must be required"],
+        required:[true,"Display Name is must be required"],
+        trim:true
+    },
+
+    "description": {
+        type: String,
+        required: [true, "Description is must be required"],
         trim: true
     },
 
-    "description":{
-        type:String,
-        required:[true,"Description is must be required"],
-        trim: true
-    },
-
-    "classification":{
-        "foodType":{
-            type:String,
-            enum:["veg","non-veg"],
-            required:[true,"Food type is must be required"],
+    "classification": {
+        "foodType": {
+            type: String,
+            enum: ["veg", "non-veg"],
+            required: [true, "Food type is must be required"],
             trim: true
         },
 
-        "zone":{
-            type:String,
+        "zone": {
+            type: String,
             required: true,
             trim: true,
             enum: ['FNV', 'AMBIENT', 'BULK', 'EGG', 'HIGHVALUE', 'POULTRY', 'FROZEN', 'RTS', 'ONION_POTATO', 'DAIRY']
         },
 
-        "category":{
-            type:String,
-            trim:true
+        category: {
+            type: String,
+            required: [true, "Category is required"],
+            trim: true,
+            enum: [
+                "VEGETABLES",
+                "FRUITS",
+                "DAIRY_MILK_PRODUCTS",
+                "EGGS",
+                "POULTRY_MEAT",
+                "FROZEN_FOODS",
+                "GRAINS_PULSES_BULK",
+                "SPICES_CONDIMENTS",
+                "OIL_GHEE",
+                "BAKERY",
+                "BEVERAGES",
+                "SNACKS_PACKAGED_FOOD",
+                "ONION_POTATO",
+                "HIGH_VALUE_ITEMS",
+                "RTS_FROZEN_NONVEG"
+            ]
         },
 
-        "tags":{
-            type:String,
+        "tags": {
+            type: String,
             required: true,
             trim: true,
         }
     },
 
-    "packaging":{
-        "baseUnit":{
-            type:String,
+    "packaging": {
+        "baseUnit": {
+            type: String,
             required: true,
             trim: true,
             enum: ["kg", "g", "litre", "ml", "piece", "dozen", "packet", "bag", "box"]
         },
 
-        "packSize":{
-            type:String,
-            required:true,
-            trim:true,
+        "packSize": {
+            type: String,
+            required: true,
+            trim: true,
         },
 
-        "netWeightKg":{
-            type:Number,
-            required:true,
+        "netWeightKg": {
+            type: Number,
+            required: true,
         },
 
-        "grossWeightKg":{
-            type:Number,
-            required:true,
+        "grossWeightKg": {
+            type: Number,
+            required: true,
         }
     },
 
-    "pricing":{
-        "mrp":{
-            type:Number,
-            required:true
+    "pricing": {
+        "mrp": {
+            type: Number,
+            required: true
         },
 
-        "sellingPrice":{
-            type:Number,
-            required:true
+        "sellingPrice": {
+            type: Number,
+            required: true
         },
 
-        "gstRate":{
-            type:Number,
+        "gstRate": {
+            type: Number,
             default: 0
         }
     },
 
-    "media":{
-        "image":{
-            type:[String],
+    "compliance": {
+        "shelfLifeDays": {
+            type: Number,
+            required: [true, "Shelf life day is must be required"],
+        },
+        "perishable": {
+            type: Boolean,
+            required: true,
+        },
+        "storageTemperature": {
+            type: String,
+            trim: true,
+            default: "No storage temperature is required"
+        }
+    },
+
+    "media": {
+        "image": {
+            type: [String],
             required: true,
         },
 
-        "thumbnail":{
-            type:String,
+        "thumbnail": {
+            type: String,
             required: true,
         }
     },
 
-    "highlights":[
+    "highlights": [
         {
-            "label":{
-                type:String
+            "label": {
+                type: String
             },
-            "value":{
-                type:String
+            "value": {
+                type: String
             }
-        }   
+        }
     ],
 
-    "status":{
-        "active":{
-            type:Boolean,
-            default:true
+    "status": {
+        "active": {
+            type: Boolean,
+            default: true
         },
 
-        "isDeleted":{
-            type:Boolean,
-            default:false
+        "isDeleted": {
+            type: Boolean,
+            default: false
         }
     }
 
-},{
-    timestamps:true
+}, {
+    timestamps: true
 });
 
 
-export const productMasterModel = mongoose.model("productMaster",productMasterSchema)
+export const productMasterModel = mongoose.model("Product", productMasterSchema)
