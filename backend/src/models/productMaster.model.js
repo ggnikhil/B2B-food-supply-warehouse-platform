@@ -10,7 +10,8 @@ const productMasterSchema = new mongoose.Schema({
 
     "productName": {
         type: String,
-        required: [true, "Product name is must be required"],
+        unique:true,
+        required: [true, "Product name is required"],
         trim: true
     },
 

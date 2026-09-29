@@ -2,6 +2,18 @@ import { productMasterModel } from "../models/productMaster.model.js";
 
 export async function createProduct(req,res) {
 
+    async function generateProductId(){
+        let id;
+        let exists = true;
+
+        while (exists){
+            id = Math.floor(Math.random()*9000)+1;
+            exists = await productMasterModel.exists({productId:id})
+        }
+
+        return id
+    }
+
     const {
         productId,
         productName,
