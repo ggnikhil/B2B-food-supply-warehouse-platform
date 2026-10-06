@@ -9,5 +9,4 @@ productRouter.get("/fetchProduct/:productId",getProductById)
 productRouter.patch("/upadateProductDetail/:productId",updatePorductDetailById)
 productRouter.delete("/deleteProduct/:productId",deleteProductById)
 
-
 export default productRouter
