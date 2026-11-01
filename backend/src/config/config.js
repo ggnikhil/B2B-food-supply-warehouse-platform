@@ -10,8 +10,13 @@ if(!process.env.NODE_ENV){
     throw new Error("Development is not defined in environment variables")
 }
 
+if(!process.env.JWT_SECERT){
+    throw new Error("JWT_SECERT is not defined in environment variables ")
+}
+
 export const config = {
     MONGO_URI : process.env.MONGO_URI,
-    Development : process.env.NODE_ENV
+    Development : process.env.NODE_ENV,
+    JWT_SECERT: process.env.JWT_SECERT
 }
 

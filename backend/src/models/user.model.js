@@ -1,11 +1,11 @@
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
+import bcryptjs from "bcryptjs";
 
 const userSchema = new mongoose.Schema({
     userId: {
         type: Number,
         required: [true, "User Id must required"],
         unique: true,
-        trim: true,
     },
     name: {
         type: String,
@@ -37,7 +37,6 @@ const userSchema = new mongoose.Schema({
     department: {
         type: String,
         enum: ["PICKER", "CHECKER", "LOADER", "DISPATCHER"],
-        required: [true, "Department must required"],
         required: [function () { return this.role === "WORKER"; }, "Department must required"]
     },
     warehouseCode: {
@@ -69,4 +68,15 @@ const userSchema = new mongoose.Schema({
 },{timestamps:true}
 );
 
-export const userModel = new mongoose.model("User", userSchema)
+
+userSchema.pre("save" , async function() {
+    if(!this.isModified("password")) return;
+
+    this.password = await bcryptjs.hash(this.password,10);
+})
+
+userSchema.methods.comparePassword = async function(givenPassword) {
+    return bcryptjs.compare(givenPassword,this.password)
+}
+
+export const userModel = mongoose.model("User", userSchema)

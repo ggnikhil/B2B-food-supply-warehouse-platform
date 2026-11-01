@@ -44,7 +44,7 @@
 
 import QRCode from "qrcode";
 import PDFDocument from "pdfkit";
-import { binLocationLabelModel } from "../models/binLabel.js";
+import { binLocationLabelModel } from "../models/binLabel.model.js";
 
 const WAREHOUSE_CODE = "MUM3";
 
