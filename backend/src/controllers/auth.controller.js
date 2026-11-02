@@ -1,10 +1,11 @@
 import { userModel } from "../models/user.model.js";
+import { userIdCountModel } from "../models/userIdCount.model.js";
 import { config } from "../config/config.js";
 import jwt from "jsonwebtoken"
 
 export async function sendTokenResponse(user, res, message) {
 
-    const jwt = jwt.sign({
+    const token = jwt.sign({
         userId: user.userId,
         name: user.name,
         role: user.role,
@@ -13,8 +14,10 @@ export async function sendTokenResponse(user, res, message) {
         expiresIn: "7d"
     })
 
+    res.cookie("token", token)
+
     return res.status(200).json({
-        message: "User created successfully",
+        message: message,
         success: true,
         user: {
             userId: user.userId,
@@ -33,7 +36,6 @@ export async function sendTokenResponse(user, res, message) {
         }
     });
 }
-
 
 export async function registerUserController(req, res, next) {
     try {
@@ -71,8 +73,16 @@ export async function registerUserController(req, res, next) {
             })
         }
 
+        const Genrated = await userIdCountModel.findOneAndUpdate(
+            {},
+            { $inc: { userIdCount: 1 } },
+            { new: true }
+        ).select("userIdCount");
+
+        const newUserId = Genrated.userIdCount;
+
         const user = await userModel.create({
-            userId,
+            userId: newUserId,
             name,
             email,
             password,
@@ -83,15 +93,45 @@ export async function registerUserController(req, res, next) {
             shiftHour,
             profilePhoto,
             joiningDate,
-            createdBy,
-            updatedBy
         })
 
         await sendTokenResponse(user, res, "User registered successfully")
 
     } catch (err) {
         err.status = 500,
-        next(err)
+            next(err)
     }
 
 }
+
+export async function loginUserController(req, res, next) {
+    try {
+
+        const { email, password } = req.body
+
+        const user = await userModel.findOne({ email }).select("+password")
+
+        if (!user) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid Email and Password"
+            })
+        }
+
+        const givePassword = await user.comparePassword(password)
+
+        if (!givePassword) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid Email and Password"
+            })
+        }
+
+        await sendTokenResponse(user,res,"User Login Successfully")
+
+    } catch (err) {
+        err.status = 500,
+            next(err)
+    }
+}
+

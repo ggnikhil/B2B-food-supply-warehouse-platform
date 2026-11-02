@@ -1,4 +1,4 @@
-import { registerUserController } from "../controllers/auth.controller.js";
+import { registerUserController,loginUserController } from "../controllers/auth.controller.js";
 import { updateUserIdCountController } from "../controllers/userId.controller.js";
 
 import express from "express"
@@ -6,6 +6,7 @@ import express from "express"
 const authRouter = express.Router()
 
 authRouter.post("/register",registerUserController)
+authRouter.post("/login",loginUserController)
 authRouter.post("/update",updateUserIdCountController)
 
 
