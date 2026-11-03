@@ -127,11 +127,15 @@ export async function loginUserController(req, res, next) {
             })
         }
 
-        await sendTokenResponse(user,res,"User Login Successfully")
+        await sendTokenResponse(user, res, "User Login Successfully")
 
     } catch (err) {
         err.status = 500,
             next(err)
     }
+}
+
+export async function getMeController(req, res, next) {
+    console.log(req.user.userId)
 }
 

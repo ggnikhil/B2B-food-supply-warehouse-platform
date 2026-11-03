@@ -1,4 +1,4 @@
-import { createBinLabelPdf } from "../services/binLabel.js";
+import { createBinLabelPdf } from "../services/binLabel.service.js";
 
 export async function generateBinLabelByBinCode(req, res, next) {
     try {
