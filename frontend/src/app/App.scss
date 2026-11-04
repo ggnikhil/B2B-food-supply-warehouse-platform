@@ -1,0 +1,240 @@
+@use "../features/shared/variables" as *;
+
+// ========================================
+// 1. GLOBAL RESET
+// ========================================
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+// ========================================
+// 2. HTML & BODY
+// ========================================
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: $font-family-primary;
+  font-size: $font-base;
+  font-weight: $font-weight-regular;
+  line-height: 1.5;
+
+  color: $text-primary;
+  background-color: $page-background;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+// ========================================
+// 3. ROOT
+// ========================================
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+// ========================================
+// 4. HEADINGS
+// ========================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-primary;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-semibold;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: $font-3xl;
+}
+
+h2 {
+  font-size: $font-2xl;
+}
+
+h3 {
+  font-size: $font-xl;
+}
+
+h4 {
+  font-size: $font-lg;
+}
+
+p {
+  color: $text-secondary;
+}
+
+
+// ========================================
+// 5. BUTTONS
+// ========================================
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+// ========================================
+// 6. INPUT FIELDS
+// ========================================
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: $text-primary;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: $text-muted;
+}
+
+
+// ========================================
+// 7. LINKS
+// ========================================
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+// ========================================
+// 8. LISTS
+// ========================================
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+// ========================================
+// 9. IMAGES
+// ========================================
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+
+// ========================================
+// 10. TABLES
+// ========================================
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+// ========================================
+// 11. SELECTION
+// ========================================
+
+::selection {
+  background-color: $primary-tint;
+  color: $text-primary;
+}
+
+
+// ========================================
+// 12. SCROLLBAR
+// ========================================
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $page-background;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9C9C9;
+  border-radius: $radius-pill;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #828282;
+}
+
+
+// ========================================
+// 13. COMMON CONTAINER
+// ========================================
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-inline: auto;
+  padding-inline: $space-4;
+}
+
+
+// ========================================
+// 14. RESPONSIVE HEADINGS
+// ========================================
+
+@media (max-width: $tablet) {
+  h1 {
+    font-size: $font-2xl;
+  }
+
+  h2 {
+    font-size: $font-xl;
+  }
+
+  h3 {
+    font-size: $font-lg;
+  }
+}

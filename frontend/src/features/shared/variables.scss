@@ -1,0 +1,527 @@
+
+// ==================================================
+// 1. COMPLETE EXTRACTED COLOR PALETTE
+// ==================================================
+$color-000000: #000000;
+$color-00000000: #00000000;
+$color-0000001a: #0000001A;
+$color-00000026: #00000026;
+$color-000000b2: #000000B2;
+$color-007aff: #007AFF;
+$color-009830: #009830;
+$color-009a51: #009A51;
+$color-01b460: #01B460;
+$color-023774: #023774;
+$color-0366d6: #0366D6;
+$color-07bc0c: #07BC0C;
+$color-080808: #080808;
+$color-0a0a0a: #0A0A0A;
+$color-0a757c: #0A757C;
+$color-0e3272: #0E3272;
+$color-108145: #108145;
+$color-1155cb: #1155CB;
+$color-119199: #119199;
+$color-121212: #121212;
+$color-12522e: #12522E;
+$color-12a2ab: #12A2AB;
+$color-1656c6: #1656C6;
+$color-17171c: #17171C;
+$color-192045: #192045;
+$color-1a1f2e: #1A1F2E;
+$color-1ba672: #1BA672;
+$color-1c1c1c: #1C1C1C;
+$color-1c1c1c0f: #1C1C1C0F;
+$color-1d653c: #1D653C;
+$color-203a4f: #203A4F;
+$color-216ba5: #216BA5;
+$color-2196f3: #2196F3;
+$color-222222: #222222;
+$color-242f64: #242F64;
+$color-243146: #243146;
+$color-24963f: #24963F;
+$color-256fef: #256FEF;
+$color-273144: #273144;
+$color-2781e7: #2781E7;
+$color-28a745: #28A745;
+$color-293142: #293142;
+$color-293146: #293146;
+$color-29397a: #29397A;
+$color-2a3142: #2A3142;
+$color-2c3875: #2C3875;
+$color-322f2f: #322F2F;
+$color-333333: #333333;
+$color-337ab7: #337AB7;
+$color-3498db: #3498DB;
+$color-34aadc: #34AADC;
+$color-363636: #363636;
+$color-374151: #374151;
+$color-3a3a3a: #3A3A3A;
+$color-3ab757: #3AB757;
+$color-3b5998: #3B5998;
+$color-3dcc4a: #3DCC4A;
+$color-3f7aff: #3F7AFF;
+$color-414a5d: #414A5D;
+$color-41a0bd: #41A0BD;
+$color-4747471a: #4747471A;
+$color-4cd964: #4CD964;
+$color-4f4f4f: #4F4F4F;
+$color-50b547: #50B547;
+$color-538cee: #538CEE;
+$color-55acee: #55ACEE;
+$color-57637a: #57637A;
+$color-57cc99: #57CC99;
+$color-5856d6: #5856D6;
+$color-596378: #596378;
+$color-5ac8fa: #5AC8FA;
+$color-5e6471: #5E6471;
+$color-616161: #616161;
+$color-62626a: #62626A;
+$color-64311e: #64311E;
+$color-666666: #666666;
+$color-68440f: #68440F;
+$color-696969: #696969;
+$color-6b7280: #6B7280;
+$color-6c42c1: #6C42C1;
+$color-6c757d: #6C757D;
+$color-6daafb: #6DAAFB;
+$color-717dba: #717DBA;
+$color-727272: #727272;
+$color-757575: #757575;
+$color-757c91: #757C91;
+$color-767c8f: #767C8F;
+$color-7acdcd: #7ACDCD;
+$color-828282: #828282;
+$color-846910: #846910;
+$color-8dc572: #8DC572;
+$color-9197a6: #9197A6;
+$color-91c842: #91C842;
+$color-948f8f: #948F8F;
+$color-95959d: #95959D;
+$color-999999: #999999;
+$color-9c9c9c: #9C9C9C;
+$color-9ca3af: #9CA3AF;
+$color-9d9d9d: #9D9D9D;
+$color-9e9e9e: #9E9E9E;
+$color-a0a5b3: #A0A5B3;
+$color-a45c41: #A45C41;
+$color-a5820a: #A5820A;
+$color-aeaeae: #AEAEAE;
+$color-aeb4c1: #AEB4C1;
+$color-afb4c0: #AFB4C0;
+$color-b00020: #B00020;
+$color-b26e00: #B26E00;
+$color-b48535: #B48535;
+$color-b5b5b5: #B5B5B5;
+$color-b8b8b8: #B8B8B8;
+$color-bb86fc: #BB86FC;
+$color-bbbbbb: #BBBBBB;
+$color-be6464: #BE6464;
+$color-bf2938: #BF2938;
+$color-c02b0a: #C02B0A;
+$color-c0c0c0: #C0C0C0;
+$color-c41e2f: #C41E2F;
+$color-c4c9d4: #C4C9D4;
+$color-c4d1e1: #C4D1E1;
+$color-c9c9c9: #C9C9C9;
+$color-cccccc: #CCCCCC;
+$color-ced4de: #CED4DE;
+$color-cf4a57: #CF4A57;
+$color-cfcfcf: #CFCFCF;
+$color-cfffdb: #CFFFDB;
+$color-d02a38: #D02A38;
+$color-d0d4dc: #D0D4DC;
+$color-d1d1d1: #D1D1D1;
+$color-d1d5db: #D1D5DB;
+$color-d3d3d3: #D3D3D3;
+$color-d5ebeb: #D5EBEB;
+$color-d6a600: #D6A600;
+$color-d6d6d6: #D6D6D6;
+$color-d9d9d9: #D9D9D9;
+$color-dbe8ff: #DBE8FF;
+$color-dc9d09: #DC9D09;
+$color-dddddd: #DDDDDD;
+$color-ddecfd: #DDECFD;
+$color-dee9fe: #DEE9FE;
+$color-e03546: #E03546;
+$color-e0e0e0: #E0E0E0;
+$color-e1ebf8: #E1EBF8;
+$color-e23744: #E23744;
+$color-e2e2e2: #E2E2E2;
+$color-e4b925: #E4B925;
+$color-e4e9f1: #E4E9F1;
+$color-e4eefa: #E4EEFA;
+$color-e5e5e5: #E5E5E5;
+$color-e5e7eb: #E5E7EB;
+$color-e5f3f3: #E5F3F3;
+$color-e6e9ef: #E6E9EF;
+$color-e6f7ef: #E6F7EF;
+$color-e74c3c: #E74C3C;
+$color-e7f5ea: #E7F5EA;
+$color-e82c42: #E82C42;
+$color-e8635a: #E8635A;
+$color-e8641b: #E8641B;
+$color-e86c37: #E86C37;
+$color-e8e8e8: #E8E8E8;
+$color-e8eaf0: #E8EAF0;
+$color-e8eaf5: #E8EAF5;
+$color-e8eaf6: #E8EAF6;
+$color-e8eaf7: #E8EAF7;
+$color-e8f5ec: #E8F5EC;
+$color-e9b501: #E9B501;
+$color-e9ebef: #E9EBEF;
+$color-eaeaeb: #EAEAEB;
+$color-ebebeb: #EBEBEB;
+$color-ebf4ff: #EBF4FF;
+$color-ebffef: #EBFFEF;
+$color-ec4654: #EC4654;
+$color-eceef4: #ECEEF4;
+$color-ed384a: #ED384A;
+$color-ed5a6b: #ED5A6B;
+$color-edf4ff: #EDF4FF;
+$color-edfaf1: #EDFAF1;
+$color-eeeeee: #EEEEEE;
+$color-ef4f5f: #EF4F5F;
+$color-eff4fe: #EFF4FE;
+$color-f0ad4e: #F0AD4E;
+$color-f0f0f0: #F0F0F0;
+$color-f1c40f: #F1C40F;
+$color-f2f2f2: #F2F2F2;
+$color-f2f4f7: #F2F4F7;
+$color-f4f4f4: #F4F4F4;
+$color-f4f6fb: #F4F6FB;
+$color-f4f6fc: #F4F6FC;
+$color-f4f6fd: #F4F6FD;
+$color-f53a3a: #F53A3A;
+$color-f57082: #F57082;
+$color-f5d7a7: #F5D7A7;
+$color-f5f5f5: #F5F5F5;
+$color-f5faf6: #F5FAF6;
+$color-f6c691: #F6C691;
+$color-f6f9fd: #F6F9FD;
+$color-f6fcfc: #F6FCFC;
+$color-f7ecec: #F7ECEC;
+$color-f7f8fa: #F7F8FA;
+$color-f7faff: #F7FAFF;
+$color-f897a0: #F897A0;
+$color-f8f8f8: #F8F8F8;
+$color-f8f8fb: #F8F8FB;
+$color-f8f9fc: #F8F9FC;
+$color-f9f9f9: #F9F9F9;
+$color-f9fafb: #F9FAFB;
+$color-f9fafc: #F9FAFC;
+$color-faf9fe: #FAF9FE;
+$color-fb5607: #FB5607;
+$color-fbf6f7: #FBF6F7;
+$color-fbfbfb: #FBFBFB;
+$color-fceec0: #FCEEC0;
+$color-fdc9d1: #FDC9D1;
+$color-fdecea: #FDECEA;
+$color-fdedef: #FDEDEF;
+$color-fdf5e9: #FDF5E9;
+$color-fee2e2: #FEE2E2;
+$color-fef2f2: #FEF2F2;
+$color-fef5f5: #FEF5F5;
+$color-ff0000: #FF0000;
+$color-ff1054: #FF1054;
+$color-ff2d55: #FF2D55;
+$color-ff3c5a: #FF3C5A;
+$color-ff6803: #FF6803;
+$color-ff7900: #FF7900;
+$color-ff7e8b: #FF7E8B;
+$color-ff9a3f: #FF9A3F;
+$color-ffb1c0: #FFB1C0;
+$color-ffd388: #FFD388;
+$color-ffdbe0: #FFDBE0;
+$color-ffec89: #FFEC89;
+$color-ffecef: #FFECEF;
+$color-ffedef: #FFEDEF;
+$color-fff1e6: #FFF1E6;
+$color-fff2f2: #FFF2F2;
+$color-fff4e8: #FFF4E8;
+$color-fff5e5: #FFF5E5;
+$color-fff5f5: #FFF5F5;
+$color-fff5f6: #FFF5F6;
+$color-fff8f0: #FFF8F0;
+$color-fffbf7: #FFFBF7;
+$color-fffceb: #FFFCEB;
+$color-ffffff: #FFFFFF;
+$color-ffffffb2: #FFFFFFB2;
+$color-ffffffcc: #FFFFFFCC;
+
+// ==================================================
+// 2. SEMANTIC COLOR ALIASES (recommended for app UI)
+// ==================================================
+$primary: #EF4F5F;
+$primary-hover: #E03546;
+$primary-soft: #FFF5F6;
+$primary-tint: #FFEDEF;
+$text-primary: #1C1C1C;
+$text-secondary: #767C8F;
+$text-muted: #9E9E9E;
+$border: #E6E9EF;
+$surface: #FFFFFF;
+$page-background: #F2F4F7;
+$success: #24963F;
+$success-dark: #108145;
+$success-soft: #EDFAF1;
+$warning: #F0AD4E;
+$warning-soft: #FDF5E9;
+$danger: #E03546;
+$danger-soft: #FEF2F2;
+$info: #256FEF;
+$info-soft: #EDF4FF;
+$teal: #0A757C;
+$navy: #242F64;
+
+// ==================================================
+// 3. FONT FAMILIES AND WEIGHTS
+// ==================================================
+$font-family-primary: "OurLexend", Helvetica, sans-serif;
+$font-family-roboto: "Roboto", Arial, sans-serif;
+$font-family-inter: "Inter", Arial, sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// ==================================================
+// 4. FONT SIZES FOUND IN THE CSS
+// ==================================================
+$font-size-1: 9px;
+$font-size-2: 10px;
+$font-size-3: 11px;
+$font-size-4: 12px;
+$font-size-5: 13px;
+$font-size-6: 14px;
+$font-size-7: 15px;
+$font-size-8: 16px;
+$font-size-9: 17px;
+$font-size-10: 18px;
+$font-size-11: 19px;
+$font-size-12: 20px;
+$font-size-13: 21px;
+$font-size-14: 22px;
+$font-size-15: 24px;
+$font-size-16: 25px;
+$font-size-17: 26px;
+$font-size-18: 28px;
+$font-size-19: 29px;
+$font-size-20: 30px;
+$font-size-21: 32px;
+$font-size-22: 34px;
+$font-size-23: 36px;
+$font-size-24: 38px;
+$font-size-25: 40px;
+$font-size-26: 44px;
+$font-size-27: 48px;
+$font-size-28: 56px;
+
+// Common semantic font-size aliases
+$font-xs: 12px;
+$font-sm: 14px;
+$font-base: 16px;
+$font-md: 18px;
+$font-lg: 20px;
+$font-xl: 24px;
+$font-2xl: 30px;
+$font-3xl: 36px;
+
+// ==================================================
+// 5. SPACING / PADDING / MARGIN SCALE
+// ==================================================
+$space-0: 0;
+$space-1: 1px;
+$space-2: 2px;
+$space-3: 3px;
+$space-4: 4px;
+$space-5: 5px;
+$space-6: 6px;
+$space-7: 8px;
+$space-8: 10px;
+$space-9: 12px;
+$space-10: 14px;
+$space-11: 15px;
+$space-12: 16px;
+$space-13: 18px;
+$space-14: 20px;
+$space-15: 24px;
+$space-16: 30px;
+$space-17: 32px;
+$space-18: 36px;
+$space-19: 40px;
+$space-20: 48px;
+$space-21: 50px;
+$space-22: 60px;
+$space-23: 80px;
+
+// Common semantic spacing aliases
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-8: 32px;
+$space-10: 40px;
+$space-12: 48px;
+
+// ==================================================
+// 6. BORDER RADIUS VALUES FOUND IN THE CSS
+// ==================================================
+$radius-0: 0;
+$radius-1: 3px;
+$radius-2: 4px;
+$radius-3: 5px;
+$radius-4: 6px;
+$radius-5: 7px;
+$radius-6: 8px;
+$radius-7: 9px;
+$radius-8: 10px;
+$radius-9: 12px;
+$radius-10: 14px;
+$radius-11: 16px;
+$radius-12: 18px;
+$radius-13: 20px;
+$radius-14: 22px;
+$radius-15: 24px;
+$radius-16: 28px;
+$radius-17: 30px;
+$radius-18: 32px;
+$radius-19: 35px;
+$radius-20: 40px;
+$radius-21: 48px;
+$radius-22: 100px;
+$radius-23: 150px;
+$radius-24: 400px;
+$radius-25: 50%;
+$radius-26: 100%;
+$radius-27: 9999px;
+
+// Common semantic radius aliases
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-2xl: 24px;
+$radius-pill: 9999px;
+$radius-circle: 50%;
+
+// ==================================================
+// 7. BREAKPOINTS FOUND IN THE CSS REFERENCES
+// ==================================================
+$breakpoint-1: 480px;
+$breakpoint-2: 481px;
+$breakpoint-3: 500px;
+$breakpoint-4: 540px;
+$breakpoint-5: 576px;
+$breakpoint-6: 640px;
+$breakpoint-7: 700px;
+$breakpoint-8: 701px;
+$breakpoint-9: 768px;
+$breakpoint-10: 769px;
+$breakpoint-11: 800px;
+$breakpoint-12: 860px;
+$breakpoint-13: 960px;
+$breakpoint-14: 991px;
+$breakpoint-15: 992px;
+$breakpoint-16: 993px;
+$breakpoint-17: 1024px;
+$breakpoint-18: 1199px;
+$breakpoint-19: 1200px;
+$breakpoint-20: 1240px;
+$breakpoint-21: 1280px;
+$breakpoint-22: 1536px;
+$breakpoint-23: 1920px;
+
+// Recommended app breakpoints (use consistently in HPSCM)
+$mobile: 576px;
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+$wide: 1440px;
+
+// ==================================================
+// 8. BACKGROUND GRADIENTS FOUND IN THE CSS REFERENCES
+// ==================================================
+$gradient-1: linear-gradient(0deg,#fff 52%,#dee9fe);
+$gradient-2: linear-gradient(180deg,#000000,rgba(0,0,0,0) 55%);
+$gradient-3: linear-gradient(180deg,#1656c6,#6daafb);
+$gradient-4: linear-gradient(180deg,#EDFAF1 -2.28%,#FFFFFF 94.22%);
+$gradient-5: linear-gradient(180deg,#FDF5E9 18.69%,#FFFFFF 95.54%);
+$gradient-6: linear-gradient(180deg,#FDF5E9 74.16%,#E8EAF5 99.89%);
+$gradient-7: linear-gradient(180deg,#FFFFFF,#F8F9FC);
+$gradient-8: linear-gradient(180deg,#FFFFFF,#F8F9FC)!important;
+$gradient-9: linear-gradient(180deg,#e8eaf5,#fff);
+$gradient-10: linear-gradient(180deg,#e8eaf5,rgba(232,234,245,0));
+$gradient-11: linear-gradient(180deg,#fdf5e9,#fff);
+$gradient-12: linear-gradient(180deg,#ffedef,#fff);
+$gradient-13: linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.24));
+$gradient-14: linear-gradient(270deg,#FFFFFF -.24%,#FDF5E9);
+$gradient-15: linear-gradient(270deg,rgba(255,249,236,0),rgba(255,249,236,.85) 20%,#FFD388 50%,rgba(255,249,236,.85) 80%,rgba(255,249,236,0));
+$gradient-16: linear-gradient(50deg,#000,#000);
+$gradient-17: linear-gradient(50deg,#41a0bd,#3f7aff);
+$gradient-18: linear-gradient(50deg,#50b547,#50b547);
+$gradient-19: linear-gradient(50deg,#cfcfcf,#cfcfcf);
+$gradient-20: linear-gradient(50deg,#e03546,#e03546);
+$gradient-21: linear-gradient(50deg,#ec4654,#ec4654);
+$gradient-22: linear-gradient(50deg,#fbf6f7,#fbf6f7);
+$gradient-23: linear-gradient(50deg,#fceec0,#fceec0);
+$gradient-24: linear-gradient(50deg,#ff9a3f,#ff7900);
+$gradient-25: linear-gradient(50deg,#fff,#fff);
+$gradient-26: linear-gradient(90deg,#4cd964,#5ac8fa,#007aff,#34aadc,#5856d6,#ff2d55);
+$gradient-27: linear-gradient(90deg,#538CEE,#1155CB);
+$gradient-28: linear-gradient(90deg,#538CEE,#1656C6);
+$gradient-29: linear-gradient(90deg,#A5820A,#846910);
+$gradient-30: linear-gradient(90deg,#A5820A,#D6A600);
+$gradient-31: linear-gradient(90deg,#DEE9FE 0,#FFFFFF);
+$gradient-32: linear-gradient(90deg,#E5F3F3,rgba(229,243,243,0));
+$gradient-33: linear-gradient(90deg,#E6E9EF,#E6E9EF 6px,transparent 0,transparent 12px);
+$gradient-34: linear-gradient(90deg,#E8EAF5,#fff);
+$gradient-35: linear-gradient(90deg,#EDFAF1,#FFF);
+$gradient-36: linear-gradient(90deg,#EFF4FE,#FFF);
+$gradient-37: linear-gradient(90deg,#EFF4FE,#FFFFFF);
+$gradient-38: linear-gradient(90deg,#F4F6FB,#FFFFFF);
+$gradient-39: linear-gradient(90deg,#cfffdb,#fff);
+$gradient-40: linear-gradient(90deg,#d3d3d3 50%,transparent 0);
+$gradient-41: linear-gradient(90deg,#d6d6d6,#d6d6d6 5px,transparent 0,transparent 10px);
+$gradient-42: linear-gradient(90deg,#dee9fe,#fff);
+$gradient-43: linear-gradient(90deg,#e5f3f3,rgba(229,243,243,0));
+$gradient-44: linear-gradient(90deg,#e6e9ef,#e6e9ef 5px,transparent 0,transparent 10px);
+$gradient-45: linear-gradient(90deg,#f2f4f7,#f2f4f7 5px,transparent 0,transparent 10px);
+$gradient-46: linear-gradient(90deg,#f8f9fc,white);
+$gradient-47: linear-gradient(90deg,#fff1e6,#fff);
+$gradient-48: linear-gradient(90deg,#fff5f6,white);
+$gradient-49: linear-gradient(93.33deg,#fffceb 34.93%,#ffec89 89.39%);
+$gradient-50: linear-gradient(94.69deg,#242f64,#192045);
+$gradient-51: linear-gradient(to bottom,var(--tw-gradient-stops));
+
+// Practical semantic gradient aliases
+$gradient-page: linear-gradient(180deg, #FFFFFF 0%, #F8F9FC 100%);
+$gradient-primary: linear-gradient(90deg, #EF4F5F 0%, #E03546 100%);
+$gradient-success: linear-gradient(180deg, #EDFAF1 0%, #FFFFFF 100%);
+$gradient-warning: linear-gradient(180deg, #FDF5E9 0%, #FFFFFF 100%);
+$gradient-info: linear-gradient(90deg, #538CEE 0%, #1656C6 100%);
+
+// ==================================================
+// 9. COMMON BOX SHADOWS
+// ==================================================
+$shadow-1: 0 1px 4px 0 rgba(28, 28, 28, 0.06);
+$shadow-2: 0 2px 8px rgba(28, 28, 28, 0.08);
+$shadow-3: 0 2px 16px rgba(28, 28, 28, 0.04);
+$shadow-4: 0 4px 8px rgba(0, 0, 0, 0.08);
+$shadow-5: 0 8px 24px rgba(0, 0, 0, 0.08);
+$shadow-6: 0 16px 40px rgba(0, 0, 0, 0.08);
+
+// ==================================================
+// 10. COMMON LAYOUT VALUES
+// ==================================================
+$container-max-width: 1280px;
+$content-max-width: 1200px;
+$sidebar-width: 260px;
+$header-height: 64px;
+$input-height: 44px;
+$button-height: 44px;
+
+

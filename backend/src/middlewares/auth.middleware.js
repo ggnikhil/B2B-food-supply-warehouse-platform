@@ -6,7 +6,6 @@ export const authenticateUserMiddleware = async (req, res, next) => {
     try {
 
         const token = req.cookies.token
-        console.log("token:", token)
 
         if (!token) {
             return res.status(401).json({
@@ -32,5 +31,20 @@ export const authenticateUserMiddleware = async (req, res, next) => {
     } catch (err) {
         err.status = 500,
             next(err)
+    }
+}
+
+export const authorizationmidleware = (...role) => {
+    return (req, res, next) =>{
+        const user = req.user
+
+        if(user.role !== role){
+            return res.status(403).json({
+                success:false,
+                message:`Access denied, Only ${role} can access`
+            })
+        }
+
+        next()
     }
 }
