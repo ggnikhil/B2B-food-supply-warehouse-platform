@@ -1,4 +1,4 @@
-import { userIdCountModel } from "../models/userIdCount.model.js";
+import { userIdCountModel } from "../../models/operation/userIdCount.model.js";
 
 export async function updateUserIdCountController(req, res, next) {
     try {

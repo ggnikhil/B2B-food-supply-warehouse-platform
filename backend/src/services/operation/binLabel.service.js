@@ -1,50 +1,6 @@
-// import QRCode from "qrcode";
-// import PDFDocument from "pdfkit";
-// import { binLocationLabelModel } from "../models/binLabel.js";
-
-// const WAREHOUSE_CODE = "MUM3";
-
-
-// export async function createBinLabelPdf(binCode) {
-//     const bin = await binLocationLabelModel.findOne({ warehouseCode: WAREHOUSE_CODE, binCode });
-
-//     if (!bin) {
-//         return null;
-//     }
-
-
-//     const qrImage = await QRCode.toBuffer(String(bin.binId), {
-//         width: 400, margin: 1
-//     });
-
-//     const pdf = new PDFDocument({
-//         size: [300, 150], margin: 0
-//     });
-
-
-//     // pdf.lineWidth(2).rect(4, 4, 291, 142).stroke();
-//     // pdf.lineWidth(1.5).moveTo(165, 4).lineTo(165, 146).stroke();
-//     // pdf.moveTo(4, 110).lineTo(165, 110).stroke();
-
-//     pdf.lineWidth(1.5).moveTo(165, 4).lineTo(165, 146).stroke();
-//     pdf.lineWidth(1.5).moveTo(195, 4).lineTo(195, 146).stroke();
-//     pdf.moveTo(4, 110).lineTo(195, 110).stroke();
-
-
-//     pdf.font("Helvetica-Bold").fontSize(22).text(bin.binCode, 10, 45, { width: 149, align: "center" });
-//     pdf.fontSize(12).text(`WH-${bin.warehouseCode}`, 10, 121, { width: 149, align: "center" });
-//     pdf.image(qrImage, 180, 30, {
-//         width: 95,
-//         height: 95,
-//     });
-
-//     return pdf;
-// }
-
-
 import QRCode from "qrcode";
 import PDFDocument from "pdfkit";
-import { binLocationLabelModel } from "../models/binLabel.model.js";
+import { binLocationLabelModel } from "../../models/operation/binLabel.model.js";
 
 const WAREHOUSE_CODE = "MUM3";
 

@@ -1,4 +1,4 @@
-import { config } from "../config/config.js";
+import { config } from "../../config/config.js";
 
 export async function errorHandler(err,req,res,next) {
     const response = {

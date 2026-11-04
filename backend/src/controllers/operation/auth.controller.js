@@ -1,7 +1,7 @@
-import { userModel } from "../models/user.model.js";
-import { userIdCountModel } from "../models/userIdCount.model.js";
-import { config } from "../config/config.js";
-import jwt from "jsonwebtoken"
+import { userModel } from "../../models/operation/user.model.js";
+import { userIdCountModel } from "../../models/operation/userIdCount.model.js";
+import { config } from "../../config/config.js";
+import jwt from "jsonwebtoken";
 
 export async function sendTokenResponse(user, res, message) {
 

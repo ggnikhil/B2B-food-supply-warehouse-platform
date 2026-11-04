@@ -1,4 +1,4 @@
-import { productMasterModel } from "../models/productMaster.model.js";
+import { productMasterModel } from "../../models/operation/productMaster.model.js";
 
 export async function createProduct(req, res) {
 
