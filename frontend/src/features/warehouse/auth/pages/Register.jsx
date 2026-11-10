@@ -1,11 +1,12 @@
-import React from 'react'
+import "../style/register.scss";
+import RegisterFrom from "../components/RegisterFrom";
 
-const Register = () => {
-  return (
-    <div>
-      Register
-    </div>
-  )
+export default function Register() {
+    return (
+        <div className="register-page">
+
+            <RegisterFrom />
+
+        </div>
+    );
 }
-
-export default Register

@@ -20,6 +20,10 @@ const WarehouseLayout = () => {
                     <Sidebar />
                 </aside>
 
+                <div className="menu-name">
+                    menu name
+                </div>
+
                 <main className="warehouse-content">
                     <MainContent />
                 </main>

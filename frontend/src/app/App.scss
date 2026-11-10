@@ -23,6 +23,7 @@ html {
 }
 
 body {
+  overflow: hidden;
   min-width: 320px;
   min-height: 100vh;
 
@@ -236,5 +237,92 @@ table {
 
   h3 {
     font-size: $font-lg;
+  }
+}
+
+/* ================================
+   Global Form Input
+================================ */
+
+.form-input {
+  width: 100%;
+  height: $input-height;
+
+  padding-inline: $space-3;
+
+  color: $text-primary;
+  background-color: $surface;
+
+  font-family: $font-family-primary;
+  font-size: $font-sm;
+  font-weight: $font-weight-regular;
+
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: $text-muted;
+  }
+
+  &:focus {
+    border-color: $success;
+    box-shadow: 0 0 0 2px $success-soft;
+  }
+
+  &:disabled {
+    color: $text-muted;
+    background-color: $page-background;
+    cursor: not-allowed;
+  }
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+
+  color: $text-primary;
+
+  font-size: $font-sm;
+  font-weight: $font-weight-medium;
+
+  .required {
+    color: $danger;
+  }
+}
+
+
+.form-select {
+  width: 100%;
+  height: $input-height;
+
+  padding-inline: $space-3;
+
+  color: $text-primary;
+  background-color: $surface;
+
+  font-family: $font-family-primary;
+  font-size: $font-sm;
+
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  outline: none;
+
+  cursor: pointer;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 2px $primary-tint;
+  }
+
+  &:disabled {
+    color: $text-muted;
+    background-color: $page-background;
+    cursor: not-allowed;
   }
 }

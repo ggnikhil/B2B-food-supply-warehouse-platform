@@ -247,6 +247,8 @@ $color-fffceb: #FFFCEB;
 $color-ffffff: #FFFFFF;
 $color-ffffffb2: #FFFFFFB2;
 $color-ffffffcc: #FFFFFFCC;
+$color-fffffff1:#e1e1e1bc;
+$color-fffcc1:#e7e7e791;
 
 // ==================================================
 // 2. SEMANTIC COLOR ALIASES (recommended for app UI)
@@ -519,8 +521,8 @@ $shadow-6: 0 16px 40px rgba(0, 0, 0, 0.08);
 // ==================================================
 $container-max-width: 1280px;
 $content-max-width: 1200px;
-$sidebar-width: 250px;
-$header-height-small: 48px;
+$sidebar-width: 220px;
+$header-height-small: 42px;
 $header-height: 64px;
 $input-height: 44px;
 $button-height: 44px;
