@@ -1,7 +1,8 @@
 import "../style/register.scss";
 import RegisterFrom from "../components/RegisterFrom";
 
-export default function Register() {
+export function Register() {
+    
     return (
         <div className="register-page">
 
@@ -10,3 +11,5 @@ export default function Register() {
         </div>
     );
 }
+
+export default Register
