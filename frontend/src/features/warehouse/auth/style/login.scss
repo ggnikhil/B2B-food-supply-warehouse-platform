@@ -1,0 +1,109 @@
+@use "../../../shared/variables" as *;
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $space-4;
+    background: $page-background;
+    font-family: $font-family-primary;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    padding: $space-6;
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+    background: $surface;
+    border-radius: $radius-2xl;
+    box-shadow: $shadow-5;
+}
+
+.login-title {
+    margin: 0;
+    font-size: $font-xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+}
+
+.login-sub {
+    margin: -8px 0 0;
+    font-size: $font-sm;
+    color: $text-secondary;
+}
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+}
+
+.login-label {
+    font-size: $font-sm;
+    font-weight: $font-weight-medium;
+    color: $text-primary;
+}
+
+.login-input {
+    width: 100%;
+    height: $input-height;
+    padding: 0 $space-4;
+    font: inherit;
+    font-size: $font-sm;
+    color: $text-primary;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    outline: none;
+    box-sizing: border-box;
+
+    &::placeholder { color: $text-muted; }
+    &:focus { border-color: $primary; }
+}
+
+.login-password {
+    position: relative;
+
+    .login-input { padding-right: 44px; }
+}
+
+.login-eye {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: $input-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-secondary;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.login-error {
+    padding: $space-2 $space-3;
+    font-size: $font-xs;
+    color: $danger;
+    background: $danger-soft;
+    border-radius: $radius-md;
+}
+
+.login-btn {
+    height: $button-height;
+    font: inherit;
+    font-size: $font-sm;
+    font-weight: $font-weight-medium;
+    color: $surface;
+    background: $primary;
+    border: 0;
+    border-radius: $radius-md;
+    cursor: pointer;
+
+    &:hover { background: $primary-hover; }
+    &:disabled { opacity: 0.6; cursor: not-allowed; }
+}

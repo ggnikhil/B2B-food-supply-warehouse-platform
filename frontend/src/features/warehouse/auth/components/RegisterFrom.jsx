@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useAuth } from "../hook/useAuth";
+
 import {
     Eye,
     EyeOff,
@@ -7,11 +9,35 @@ import {
 } from "lucide-react";
 import "../style/register.scss";
 
+const initialForm = {
+    name: "",
+    email: "",
+    password: "",
+    contactNumber: "",
+    role: "WORKER",
+    department: "",
+    warehouseCode: "WH-MUM3",
+    shiftHour: "9hr",
+    profilePhoto: null,
+    joiningDate: "",
+};
+
 const RegisterFrom = () => {
 
-    const [role, setRole] = useState("WORKER");
     const [showPassword, setShowPassword] = useState(false);
     const [profilePreview, setProfilePreview] = useState(null);
+    const [fromdata, setfromdata] = useState(initialForm);
+
+    const {handleRegister} = useAuth()
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        setfromdata((prev) => ({
+            ...prev,
+            [name]: value
+        }));
+    };
 
     const handleProfilePhoto = (e) => {
         const file = e.target.files[0];
@@ -32,17 +58,23 @@ const RegisterFrom = () => {
 
         const imageUrl = URL.createObjectURL(file);
         setProfilePreview(imageUrl);
+        setfromdata((prev) => ({
+            ...prev,
+            profilePhoto: file
+        }));
     };
 
     const handleReset = () => {
-        setRole("WORKER");
+        setfromdata(initialForm);
         setShowPassword(false);
         setProfilePreview(null);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Register form submitted");
+        
+        handleRegister(fromdata)
+        setfromdata(initialForm)
     };
 
     return (
@@ -61,6 +93,8 @@ const RegisterFrom = () => {
                     className="form-input"
                     type="text"
                     name="name"
+                    value={fromdata.name}
+                    onChange={handleChange}
                     placeholder="Full name"
                     required
                 />
@@ -79,6 +113,8 @@ const RegisterFrom = () => {
                         className="form-input"
                         type="tel"
                         name="contactNumber"
+                        value={fromdata.contactNumber}
+                        onChange={handleChange}
                         placeholder="10 digit number"
                         inputMode="numeric"
                         maxLength={10}
@@ -97,6 +133,8 @@ const RegisterFrom = () => {
                     className="form-input"
                     type="email"
                     name="email"
+                    value={fromdata.email}
+                    onChange={handleChange}
                     placeholder="name@gmail.com"
                     required
                 />
@@ -114,6 +152,8 @@ const RegisterFrom = () => {
                         className="form-input"
                         type={showPassword ? "text" : "password"}
                         name="password"
+                        value={fromdata.password}
+                        onChange={handleChange}
                         placeholder="Min 8 characters"
                         minLength={8}
                         required
@@ -144,7 +184,7 @@ const RegisterFrom = () => {
                     className="form-input"
                     type="text"
                     name="warehouseCode"
-                    value="WH-MUM3"
+                    value={fromdata.warehouseCode}
                     disabled
                     readOnly
                 />
@@ -159,8 +199,8 @@ const RegisterFrom = () => {
                 <select
                     className="form-select"
                     name="role"
-                    value={role}
-                    onChange={(e) => setRole(e.target.value)}
+                    value={fromdata.role}
+                    onChange={handleChange}
                     required
                 >
                     <option value="WORKER">
@@ -174,7 +214,7 @@ const RegisterFrom = () => {
             </label>
 
 
-            {role === "WORKER" && (
+            {fromdata.role === "WORKER" && (
                 <label className="register-field">
                     <span>
                         Department <b>*</b>
@@ -183,7 +223,8 @@ const RegisterFrom = () => {
                     <select
                         className="form-select"
                         name="department"
-                        defaultValue=""
+                        value={fromdata.department}
+                        onChange={handleChange}
                         required
                     >
                         <option value="" disabled>
@@ -218,7 +259,8 @@ const RegisterFrom = () => {
                 <select
                     className="form-select"
                     name="shiftHour"
-                    defaultValue="9hr"
+                    value={fromdata.shiftHour}
+                    onChange={handleChange}
                     required
                 >
                     <option value="9hr">
