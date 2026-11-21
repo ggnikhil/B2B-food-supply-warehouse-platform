@@ -1,0 +1,27 @@
+@use "../../../shared/variables" as *;
+
+.client-homepage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $surface;
+
+  &__navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  &__main {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  &__footer {
+    width: 100%;
+    flex-shrink: 0;
+  }
+}

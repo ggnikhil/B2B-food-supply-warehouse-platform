@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden; // FIX: pehle "overflow: hidden" tha, isse scroll band tha
   min-width: 320px;
   min-height: 100vh;
 

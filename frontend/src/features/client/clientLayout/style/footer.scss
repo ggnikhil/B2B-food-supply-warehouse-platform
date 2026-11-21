@@ -1,0 +1,109 @@
+@use "../../../shared/variables" as *;
+
+.footer {
+  background: $surface;
+  padding: $space-8 $space-6;
+  font-family: $font-family-primary;
+
+  &__inner {
+    max-width: $content-max-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.6fr 1.2fr 1fr 1.4fr;
+    gap: $space-8;
+  }
+
+  &__col {
+    h4 {
+      margin: 0 0 $space-4;
+      font-size: $font-sm;
+      font-weight: $font-weight-medium;
+      color: $text-primary;
+    }
+
+    p { margin: 0 0 $space-2; font-size: $font-sm; }
+
+    ul { list-style: none; margin: 0; padding: 0; }
+
+    li { margin-bottom: $space-3; }
+
+    li a {
+      font-size: $font-sm;
+      color: $text-primary;
+      text-decoration: none;
+      &:hover { color: $primary; }
+    }
+  }
+
+  &__name { color: $text-primary; }
+  &__muted { color: $text-secondary; }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    margin-top: $space-3;
+    font-size: $font-sm;
+    color: $text-primary;
+    text-decoration: none;
+
+    svg { color: $primary; }
+    &--mail { color: $primary; }
+  }
+
+  &__socials {
+    display: flex;
+    gap: $space-3;
+
+    a {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: $radius-circle;
+      background: $color-414a5d;
+      color: $surface;
+      font-size: 14px;
+      transition: background 0.2s;
+      &:hover { background: $primary; }
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: $space-8;
+  }
+
+  &__logo {
+    font-size: $font-3xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    span { color: $primary; }
+  }
+
+  &__stores {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+
+    img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+  }
+
+  @media (max-width: $laptop) {
+    &__inner { grid-template-columns: 1fr 1fr; }
+    &__brand { align-items: flex-start; }
+  }
+
+  @media (max-width: $mobile) {
+    &__inner { grid-template-columns: 1fr; }
+  }
+}

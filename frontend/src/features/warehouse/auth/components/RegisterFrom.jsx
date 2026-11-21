@@ -70,10 +70,10 @@ const RegisterFrom = () => {
         setProfilePreview(null);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
-        handleRegister(fromdata)
+        await handleRegister(fromdata)
         setfromdata(initialForm)
     };
 

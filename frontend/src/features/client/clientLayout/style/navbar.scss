@@ -1,0 +1,141 @@
+@use "../../../shared/variables" as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: $space-6;
+  padding: $space-3 $space-6;
+  background: $surface;
+  border-radius: 0 0 $radius-2xl $radius-2xl;
+  box-shadow: $shadow-2;
+  font-family: $font-family-primary;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: $space-4;
+    flex-shrink: 0;
+  }
+
+  &__logo {
+    font-size: $font-xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+
+    span { color: $primary; }
+  }
+
+  &__delivery {
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: $space-2;
+      font-size: $font-md;
+      font-weight: $font-weight-semibold;
+      color: $text-primary;
+
+      svg { color: $teal; font-size: 20px; }
+    }
+
+    &-sub {
+      margin: 2px 0 0;
+      font-size: $font-xs;
+      color: $text-secondary;
+
+      b { font-weight: $font-weight-regular; color: $text-primary; }
+    }
+  }
+
+  &__search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    height: $input-height;
+    max-width: 770px;
+    padding: 0 $space-4;
+    background: $page-background;
+    border: 1px solid $border;
+    border-radius: $radius-pill;
+
+    svg { color: $primary; font-size: 18px; flex-shrink: 0; }
+
+    input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font: inherit;
+      font-size: $font-sm;
+      color: $text-primary;
+
+      &::placeholder { color: $text-muted; }
+    }
+
+    &:focus-within { border-color: $primary; background: $surface; }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    margin-left: auto;
+  }
+
+  &__btn {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: $button-height;
+    height: $button-height;
+    border: 1px solid $border;
+    border-radius: $radius-circle;
+    background: $surface;
+    color: $text-primary;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover { background: $page-background; }
+
+    &--cart {
+      background: $primary;
+      border-color: $primary;
+      color: $surface;
+      &:hover { background: $primary-hover; }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 4px;
+    display: grid;
+    place-items: center;
+    background: $text-primary;
+    color: $surface;
+    border: 2px solid $surface;
+    border-radius: $radius-pill;
+    font-size: 11px;
+    font-weight: $font-weight-bold;
+  }
+
+  @media (max-width: $laptop) {
+    &__delivery { display: none; }
+  }
+
+  @media (max-width: $tablet) {
+    gap: $space-3;
+    padding: $space-2 $space-3;
+    &__btn:not(&__btn--cart) { display: none; }
+    &__btn:last-child { display: grid; }
+  }
+}
