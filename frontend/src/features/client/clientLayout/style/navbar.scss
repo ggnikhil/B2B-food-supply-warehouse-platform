@@ -12,6 +12,8 @@
   border-radius: 0 0 $radius-2xl $radius-2xl;
   box-shadow: $shadow-2;
   font-family: $font-family-primary;
+  position: absolute;
+  width: 100%;
 
   &__left {
     display: flex;
