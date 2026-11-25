@@ -1,7 +1,7 @@
 import "dotenv/config";
 import mongoose from "mongoose";
 import XLSX from "xlsx";
-import { productMasterModel } from "../src/models/productMaster.model.js";
+import { productMasterModel } from "../src/models/operation/productMaster.model.js";
 
 const DRY_RUN = process.argv.includes("--dry");
 
@@ -64,18 +64,24 @@ function rowToProduct(r) {
     return {
         productName: clean(r.productName).replace(/\s+/g, " "),
         displayName: clean(r.displayName),
+        brand: clean(r.brand), // CHANGE 1: brand add
         description: clean(r.description),
 
         classification: {
             foodType: clean(r.foodType),
             zone: clean(r.zone),
             category: clean(r.category),
+            // CHANGE 2: tags ab array (comma se alag)
             tags: clean(r.tags)
+                .split(",")
+                .map((s) => s.trim())
+                .filter(Boolean)
         },
 
         packaging: {
             baseUnit: clean(r.baseUnit),
             packSize: clean(r.packSize),
+            packQuantity: clean(r.packQuantity) === "" ? undefined : toNumber(r.packQuantity, "packQuantity"),
             netWeightKg: toNumber(r.netWeightKg, "netWeightKg"),
             grossWeightKg: toNumber(r.grossWeightKg, "grossWeightKg")
         },
@@ -93,8 +99,9 @@ function rowToProduct(r) {
         },
 
         media: {
+            // CHANGE 3: newline se split (URL me comma ho sakta hai)
             image: clean(r.image)
-                .split(",")
+                .split(/\r?\n/)
                 .map((s) => s.trim())
                 .filter(Boolean),
             thumbnail: clean(r.thumbnail)
@@ -139,6 +146,13 @@ async function main() {
         (await productMasterModel.find({}, "productId")).map((p) => p.productId)
     );
 
+    // CHANGE 4: DB me pehle se jo naam hain (dobara run par duplicate rokne ke liye)
+    const existingNames = new Set(
+        (await productMasterModel.find({}, "productName")).map((p) =>
+            p.productName.toLowerCase()
+        )
+    );
+
     const newId = () => {
         let id;
         do {
@@ -165,6 +179,10 @@ async function main() {
 
             if (seenNames.has(key)) {
                 throw new Error("Duplicate product name in Excel");
+            }
+
+            if (existingNames.has(key)) {
+                throw new Error("Product already exists in DB");
             }
 
             if (product.pricing.sellingPrice > product.pricing.mrp) {
